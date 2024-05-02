@@ -1,0 +1,72 @@
+<%- include('partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather Website</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="inner">
+        <section class="left">
+          <div class="weather-icons">
+            <img
+              src="/icons/electricClouds.svg"
+              alt="Electric clouds icon"
+              width="70px"
+            />
+            <img
+              src="/icons/nightMoon.svg"
+              alt="Night moon icon"
+              width="70px"
+            />
+            <img src="/icons/weather.svg" alt="Weather icon" width="70px" />
+            <img
+              src="/icons/tempInfo.svg"
+              alt="Temperature info icon"
+              width="70px"
+            />
+          </div>
+
+          <div class="content">
+            <h1>Daily Weather Forecast Update <span> News</span></h1>
+
+            <p class="weather-description">
+              White fluffy clouds dotted the azure blue sky as the sun beamed
+              beatifically, casting a golden glow upon the earth.
+            </p>
+          </div>
+        </section>
+
+        <section class="right">
+          <div class="rightTop">
+            <h2 class="rightHeader">
+              <img
+                class="rightImg"
+                src="/icons/windIcon.svg"
+                alt="Wind icon"
+                width="80px"
+              />
+              Puff of air
+            </h2>
+          </div>
+          <div class="rightBottom">
+            <p class="rightP">Location:</p>
+
+            <form action="/" method="post">
+              <input
+                type="search"
+                class="placeInput"
+                name="searchTemp"
+                placeholder="City,Country Code"
+              />
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
+<%- include('partials/footer.ejs') %>
