@@ -83,6 +83,10 @@ app.get("/faqs", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
+  if (!apiKey) {
+    throw new Error("API Key not found in environment variables!");
+  }
+
   try {
     const options = {
       weekday: "long",
@@ -94,16 +98,12 @@ app.post("/", async (req, res) => {
     const query = req.body.searchTemp;
 
     // Get weather data from API
-    const response = await fetch(
-      `${API_URL}${query}&APPID=${apiKey}&units=${unit}`
+    const response = await axios.get(
+      `${API_URL}${query}&appid=${apiKey}&units=${unit}`
     );
 
-    if (!response.ok) {
-      throw new Error(`API request failed with status: ${response.status}`);
-    }
-
     // Extract weather data from response
-    const weatherData = await response.json();
+    const weatherData = response.data;
 
     // Select the image based on the weather condition
     const imagePath = selectImage(weatherData.weather[0].main);
@@ -123,12 +123,19 @@ app.post("/", async (req, res) => {
     const sunSet = new Date(sunset * 1000);
     const formattedSunSet = sunSet.toLocaleTimeString("default");
 
+    // Capitalize First Letter Of Every Word(Weather Description)
+    const weatherDescription = description;
+    const capitalizedDescription = weatherDescription
+      .split(" ")
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(" ");
+
     res.render("current", {
       imagePath,
       day,
       cityName: weatherData.name,
       cityTemp: temp,
-      description,
+      description: capitalizedDescription,
       weatherIcon: `http://openweathermap.org/img/wn/${icon}@2x.png`,
       minTemp: temp_min,
       maxTemp: temp_max,
