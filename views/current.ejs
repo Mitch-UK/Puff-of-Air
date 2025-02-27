@@ -1,0 +1,152 @@
+<%- contentFor('headContent') %>
+<title><%= title %></title>
+
+<%- contentFor('body') %>
+<div class="container-current" <% if (locals.imagePath) { %>
+  style="background-image: url('<%= imagePath %>');" <% } %>>
+  <header class="card-title">
+    <h1>Weather Forecast</h1>
+    <h2 class="day-time"><%= locals.day || 'Today' %></h2>
+  </header>
+  <main class="weather-details">
+    <section class="metrics-container">
+      <div class="metric-box">
+        <div class="metric-item">
+          <img
+            class="metric-icon"
+            src="/icons/temp-feels.svg"
+            width="60"
+            height="60"
+            alt="temperature feels like icon"
+          />
+          <span class="metric-text">
+            <span class="bold">Temp-Feels</span>
+            <br />
+            <span class="value">
+              <% if (locals.tempFeels) { %> <%= locals.tempFeels %> °F <% } else
+              { %> N/A <% } %>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-item">
+          <img
+            class="metric-icon-p"
+            src="/icons/pressure.svg"
+            width="40"
+            height="40"
+            alt="pressure logo"
+          />
+          <span class="metric-text">
+            <span class="bold">Pressure</span>
+            <br />
+            <span>
+              <% if (locals.pressure) { %> <%= locals.pressure %> Pa <% } else {
+              %> N/A <% } %>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-item">
+          <img
+            class="metric-icon"
+            src="/icons/humidity.svg"
+            width="50"
+            height="50"
+            alt="humidity logo"
+          />
+          <span class="metric-text">
+            <span class="bold">Humidity</span> <br />
+            <span>
+              <% if (locals.humidity) { %> <%= locals.humidity %> % <% } else {
+              %> N/A <% } %>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-item">
+          <img
+            class="metric-icon"
+            src="/icons/wind-speed.svg"
+            width="50"
+            height="50"
+            alt="wind-speed icon"
+          />
+          <span class="metric-text">
+            <span class="bold">W-Speed</span> <br />
+            <span>
+              <% if (locals.windSpeed) { %> <%= locals.windSpeed %> m/s <% }
+              else { %> N/A <% } %>
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-item">
+          <span> Sunrise: </span>
+          <span class="bold">
+            <% if (locals.sunrise) { %> <%= locals.sunrise %> <% } else { %> N/A
+            <% } %>
+          </span>
+          <br />
+          <span class="bold"> Sunset: </span>
+          <span class="bold">
+            <% if (locals.sunset) { %> <%= locals.sunset %> <% } else { %> N/A
+            <% } %>
+          </span>
+        </div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-item">
+          <span> Longitude: </span>
+          <span class="bold">
+            <% if (locals.lon) { %> <%= locals.lon %> <% } else { %> N/A <% } %>
+          </span>
+          <br />
+          <span> Latitude: </span>
+          <span class="bold">
+            <% if (locals.lat) { %> <%= locals.lat %> <% } else { %> N/A <% } %>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <article class="weather-card">
+      <div class="card-body">
+        <h2 class="card-city-name">
+          <% if (locals.cityName) { %> <%= locals.cityName %> <% } else { %> N/A
+          <% } %>
+        </h2>
+        <h3 class="city-temp">
+          <% if (locals.cityTemp) { %> <%= locals.cityTemp %> °F <% } else { %>
+          N/A <% } %>
+        </h3>
+        <h4 class="weather-description">
+          <% if (locals.description) { %> <%= locals.description %> <% } else {
+          %> N/A <% } %>
+        </h4>
+        <% if (locals.weatherIcon) { %>
+        <img class="weather-icon" src="<%= weatherIcon %>" alt="Weather icon" />
+        <% } else { %>
+        <div class="no-icon">N/A</div>
+        <% } %>
+      </div>
+      <div class="card-footer">
+        <h5 class="minmax-label">Min Temp | Max Temp</h5>
+        <p class="minmax-temp">
+          <% if (locals.minTemp && locals.maxTemp) { %> <%= locals.minTemp %> |
+          <%= locals.maxTemp %> <% } else { %> N/A <% } %>
+        </p>
+        <a href="/" class="btn btn-primary home-btn">Home</a>
+      </div>
+    </article>
+  </main>
+</div>

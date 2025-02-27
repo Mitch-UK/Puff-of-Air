@@ -1,0 +1,79 @@
+/* About Styles */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .about-section {
+    flex-direction: row;
+  }
+
+  .about-content {
+    flex: 3;
+  }
+
+  .team-section {
+    flex: 2;
+  }
+}
+
+.about-content h2,
+.team-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-primary);
+}
+
+.about-content p,
+.team-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-item span {
+  font-weight: 500;
+}
+
+.team-member {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  background-color: var(--background-dark);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.member-avatar img {
+  border-radius: 50%;
+  border: 3px solid var(--border-light);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.member-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.member-role {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,17 @@
+<%- contentFor('headContent') %>
+<title>Error <%= locals.statusCode || 'Oops!' %></title>
+
+<%- contentFor('body') %>
+<div class="error-container">
+  <h1 class="error-title">Error: <%= locals.statusCode || '404' %></h1>
+  <p class="error-message">
+    <%= `${error} , Please try again!` || 'Page not found' %>
+  </p>
+  <% if (locals.stack && process.env.NODE_ENV !== 'production') { %>
+  <div class="error-stack">
+    <h3>Stack trace:</h3>
+    <pre><%= stack %></pre>
+  </div>
+  <% } %>
+  <a href="/" class="btn btn-primary home-link">Back to Home</a>
+</div>

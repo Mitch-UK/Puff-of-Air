@@ -1,0 +1,77 @@
+<%- contentFor('headContent') %>
+<title><%= title %></title>
+
+<%- contentFor('body') %>
+<main class="container page-content">
+  <div class="content-wrapper">
+    <h1 class="page-title">Frequently Asked Questions</h1>
+
+    <section class="faq-section">
+      <div class="faq-item">
+        <h2 class="faq-question">How is the weather data collected?</h2>
+        <div class="faq-answer">
+          <p>
+            The current weather app uses the API from Open Weather Map:
+            <a
+              href="https://openweathermap.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >openweathermap.org</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">How accurate is the weather forecast?</h2>
+        <div class="faq-answer">
+          <p>
+            Weather forecasts are typically accurate for 3-5 days in advance.
+            The further into the future, the less accurate the prediction
+            becomes due to the chaotic nature of atmospheric conditions.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">How often is the weather data updated?</h2>
+        <div class="faq-answer">
+          <p>
+            Current weather data is updated every 10 minutes to ensure you have
+            the most recent information available.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">
+          Can I get weather information for any location?
+        </h2>
+        <div class="faq-answer">
+          <p>
+            Yes! Our service allows you to search for weather information for
+            most cities worldwide. Simply enter the city name and country code
+            in the search box.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <h2 class="faq-question">
+          What does the "feels like" temperature mean?
+        </h2>
+        <div class="faq-answer">
+          <p>
+            The "feels like" temperature takes into account factors like
+            humidity and wind speed to give you a better idea of how the weather
+            will actually feel to you, rather than just the thermometer reading.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<%- contentFor('scripts') %> <% if (typeof scripts !== 'undefined') { %>
+<script src="<%= scripts %>"></script>
+<% } %>

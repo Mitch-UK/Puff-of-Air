@@ -1,0 +1,86 @@
+<%- contentFor('headContent') %>
+<title><%= title %></title>
+
+<%- contentFor('body') %>
+<main class="container page-content">
+  <div class="content-wrapper">
+    <h1 class="page-title">About Weather Hub</h1>
+
+    <section class="about-section">
+      <div class="about-content">
+        <h2>Our Mission</h2>
+        <p>
+          The Weather Hub app includes a number of features that provide
+          information about current and forecasted weather. Some features aren't
+          currently available in every country or region.
+        </p>
+
+        <h2>How We Work</h2>
+        <p>
+          Our dedicated team gathers weather information from reliable sources
+          worldwide to give you the most accurate forecasts possible. We use
+          cutting-edge technology to analyze data patterns and predict weather
+          conditions.
+        </p>
+
+        <h2>Technology Stack</h2>
+        <div class="tech-stack">
+          <div class="tech-item">
+            <img
+              src="/icons/nodejs.svg"
+              alt="Node.js logo"
+              width="60"
+              height="60"
+            />
+            <span>Node.js</span>
+          </div>
+          <div class="tech-item">
+            <img
+              src="/icons/express.svg"
+              alt="Express.js logo"
+              width="60"
+              height="60"
+            />
+            <span>Express</span>
+          </div>
+          <div class="tech-item">
+            <img src="/icons/ejs.svg" alt="EJS logo" width="60" height="60" />
+            <span>EJS</span>
+          </div>
+          <div class="tech-item">
+            <img src="/icons/api.svg" alt="API icon" width="60" height="60" />
+            <span>Weather API</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-section">
+        <h2>Our Team</h2>
+        <p>
+          Weather Hub was developed by a passionate team of developers who love
+          both technology and meteorology.
+        </p>
+
+        <div class="team-member">
+          <div class="member-avatar">
+            <img
+              id="avatar-img"
+              src="<%= avatarImgSrc %>"
+              alt="Omar's avatar"
+              width="150"
+              height="150"
+            />
+          </div>
+          <div class="member-info">
+            <h3>Omar</h3>
+            <p class="member-role">Lead Developer</p>
+            <p>
+              Creator of Weather Hub and weather enthusiast who wanted to make
+              meteorological data more accessible to everyone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

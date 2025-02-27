@@ -1,0 +1,164 @@
+/* Current (weather details) Styles */
+.container-current {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-image: url("<%= imagePath %>");
+}
+
+.card-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.day-time {
+  font-size: 1.5rem;
+  color: var(--text-light-color);
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .weather-details {
+    flex-direction: row;
+  }
+
+  .metrics-container {
+    flex: 2;
+  }
+
+  .weather-card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .weather-details {
+    flex-direction: column-reverse;
+  }
+
+  .weather-card {
+    width: 90%;
+  }
+
+  .city-temp,
+  .weather-description {
+    text-align: center;
+  }
+}
+
+.metrics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.metric-box {
+  background-color: var(--background-dark);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.metric-icon,
+.metric-icon-p {
+  flex-shrink: 0;
+}
+
+.metric-text {
+  flex-grow: 1;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.weather-card {
+  background-color: var(--background-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-city-name {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.city-temp {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.weather-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.weather-icon {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+}
+
+.no-icon {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.card-footer {
+  padding: 1.5rem;
+  background-color: var(--background-dark);
+  text-align: center;
+}
+
+.minmax-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.minmax-temp {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  text-align: center;
+}

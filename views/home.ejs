@@ -1,0 +1,72 @@
+<%- contentFor('headContent') %>
+<title><%= title %></title>
+
+<%- contentFor('body') %>
+<main class="container">
+  <div class="inner">
+    <section class="left">
+      <div class="weather-icons">
+        <img
+          src="/icons/electricClouds.svg"
+          alt="Electric clouds icon"
+          width="70"
+          height="70"
+        />
+        <img
+          src="/icons/nightMoon.svg"
+          alt="Night moon icon"
+          width="70"
+          height="70"
+        />
+        <img
+          src="/icons/weather.svg"
+          alt="Weather icon"
+          width="70"
+          height="70"
+        />
+        <img
+          src="/icons/tempInfo.svg"
+          alt="Temperature info icon"
+          width="70"
+          height="70"
+        />
+      </div>
+
+      <div class="content">
+        <h1>Daily Weather Forecast Update <span>News</span></h1>
+        <p class="weather-description">
+          White fluffy clouds dotted the azure blue sky as the sun beamed
+          beatifically, casting a golden glow upon the earth.
+        </p>
+      </div>
+    </section>
+
+    <section class="right">
+      <div class="right-top">
+        <h2 class="right-header">
+          <img
+            class="right-img"
+            src="/icons/windIcon.svg"
+            alt="Wind icon"
+            width="80"
+            height="80"
+          />
+          Puff of air
+        </h2>
+      </div>
+      <div class="right-bottom">
+        <p class="right-p">Location:</p>
+        <form action="/" method="post">
+          <input
+            type="search"
+            class="place-input"
+            name="searchTemp"
+            placeholder="City,Country Code"
+            required
+          />
+          <button type="submit" class="search-button">Search</button>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>

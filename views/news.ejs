@@ -1,0 +1,105 @@
+<%- contentFor('headContent') %>
+<title><%= title %></title>
+
+<%- contentFor('body') %>
+<main class="container page-content">
+  <div class="content-wrapper">
+    <h1 class="page-title">Latest Weather News</h1>
+
+    <section class="news-content">
+      <h2 class="news-header">Today's Weather Forecast</h2>
+
+      <p class="news-paragraph">
+        Now, let's see what the weather is like today. In the north of the
+        country, it's very windy and cold. There is a chance of some rain too,
+        so don't leave home without your umbrella! The temperature is around
+        50°F.
+      </p>
+
+      <div class="weather-region-grid">
+        <div class="weather-region-card">
+          <h3>Northern Region</h3>
+          <div class="region-details">
+            <img
+              src="/icons/wind.svg"
+              alt="Windy weather"
+              class="region-icon"
+              width="50"
+              height="50"
+            />
+            <div class="region-info">
+              <p><strong>Conditions:</strong> Windy and cold</p>
+              <p><strong>Temperature:</strong> 50°F</p>
+              <p><strong>Precipitation:</strong> Chance of rain</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather-region-card">
+          <h3>Eastern Region</h3>
+          <div class="region-details">
+            <img
+              src="/icons/rain.svg"
+              alt="Rainy weather"
+              class="region-icon"
+              width="50"
+              height="50"
+            />
+            <div class="region-info">
+              <p><strong>Conditions:</strong> Rainy all day</p>
+              <p><strong>Temperature:</strong> 65.4°F</p>
+              <p><strong>Special:</strong> Possible thunderstorm</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather-region-card">
+          <h3>Western Region</h3>
+          <div class="region-details">
+            <img
+              src="/icons/cloudy.svg"
+              alt="Cloudy weather"
+              class="region-icon"
+              width="50"
+              height="50"
+            />
+            <div class="region-info">
+              <p><strong>Conditions:</strong> Dry but cloudy</p>
+              <p><strong>Temperature:</strong> 60°F</p>
+              <p><strong>Wind:</strong> Quite windy</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather-region-card">
+          <h3>Southern Region</h3>
+          <div class="region-details">
+            <img
+              src="/icons/partly-cloudy.svg"
+              alt="Partly cloudy weather"
+              class="region-icon"
+              width="50"
+              height="50"
+            />
+            <div class="region-info">
+              <p><strong>Conditions:</strong> Cloudy, sunny afternoon</p>
+              <p><strong>Temperature:</strong> 79°F</p>
+              <p><strong>Forecast:</strong> Best weather today</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weather-alert">
+        <h3>
+          <img src="/icons/alert.svg" alt="Alert icon" width="24" height="24" />
+          Weather Alert
+        </h3>
+        <p>
+          Remember to check back for updates as weather conditions may change
+          throughout the day.
+        </p>
+      </div>
+    </section>
+  </div>
+</main>

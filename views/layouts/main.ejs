@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= typeof title !== 'undefined' ? title : 'Weather Hub' %></title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/styles.css" />
+  
+  <!-- Page specific CSS -->
+  <% if (typeof pageCss !== 'undefined') { %>
+    <link rel="stylesheet" href="/css/<%= pageCss %>.css" />
+  <% } %>
+  
+  
+  <!-- Additional head content -->
+  <%- typeof headContent !== 'undefined' ? headContent : '' %>
+
+</head>
+
+  <body <% if (typeof bodyClass !== 'undefined') { %>class="<%= bodyClass %>"<% } %> <% if (typeof bodyAttributes !== 'undefined') { %><%- bodyAttributes %><% } %>>
+
+    <!-- Header -->
+    <%- include('../partials/header', { currentPage: locals.currentPage || 'home' }) %>
+
+    
+    <!-- Main Content -->
+    <%- body %>
+    
+    <!-- Footer -->
+    <%- include('../partials/footer') %>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    <!-- Additional scripts -->
+    <% if (typeof scripts !== 'undefined') { %>
+      <%- scripts %>
+    <% } %>
+
+  </body>
+</html>
